@@ -31,3 +31,6 @@
 /config/master.key
 /config/database.yml
 /test/*
+/node_modules
+/.vscode
+config/database.yml
