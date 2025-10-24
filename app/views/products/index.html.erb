@@ -1,0 +1,7 @@
+<%= link_to "New product", new_product_path %>
+<p style="color: green"><%= notice %></p>
+<h1>Products</h1>
+<div id="products">
+  <%= render (@products) || "List empty" %>
+</div>
+<%= link_to "New product", new_product_path %>
