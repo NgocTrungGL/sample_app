@@ -31,5 +31,69 @@
 
 en:
   hello: "Hello world"
-en:
   invalid_email_password_combination: "Invalid email/password combination"
+
+  layouts:
+    application:
+      default_title: "Sample App"
+      flash:
+        success: "Action completed successfully!"
+        danger: "Something went wrong!"
+        warning: "Please check your input."
+        notice: "Notice message."
+    header:
+      title: "Sample App"
+      home: "Home"
+      help: "Help"
+      users: "Users"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      logout: "Log out"
+      login: "Log in"
+
+  mailer:
+    default_title: "Sample App Mailer"
+    default_greeting: "Hello,"
+    default_signature: "Best regards, The Sample App Team"
+
+  shared:
+    error_messages:
+      header:
+        one: "1 error prohibited this %{model} from being saved:"
+        other: "%{count} errors prohibited this %{model} from being saved:"
+
+  users:
+    show:
+      email: "Email"
+      member_since: "Member since"
+    new:
+      title: "Sign Up"
+      heading: "Sign Up"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password confirmation"
+      submit: "Create my account"
+  sessions:
+    new:
+      log_in_title: "Log in"
+      log_in_heading: "Log in"
+      email: "Email"
+      password: "Password"
+      remember_me: "Remember me on this computer"
+      log_in_button: "Log in"
+      new_user: "New user?"
+      sign_up_now: "Sign up now!"
+  static_pages:
+    help:
+      help_title: "Help"
+      help_heading: "Help"
+      rails_tutorial_help_page: "Rails Tutorial help page"
+      rails_tutorial_help_html: "Get help on the Ruby on Rails Tutorial at the %{help_link}."
+      sample_app_help_html: "To get help on this sample app, see the %{book_link}."
+    home:
+      home_title: "Home"
+      welcome_heading: "Welcome to the Sample App"
+      home_description_html: "This is the home page for the %{tutorial_link} sample application."
+      sign_up_now: "Sign up now!"

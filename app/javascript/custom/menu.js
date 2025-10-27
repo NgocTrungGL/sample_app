@@ -1,11 +1,10 @@
-document.addEventListener("turbo:load", function () {
-  const account = document.querySelector("#account");
-  const menu = document.querySelector("#dropdown-menu");
+import $ from "jquery";
+window.$ = $;
+window.jQuery = $;
 
-  if (account && menu) {
-    account.addEventListener("click", function (event) {
-      event.preventDefault();
-      menu.classList.toggle("active");
-    });
-  }
+$(document).on("turbo:load", function () {
+  $("#account").on("click", function (e) {
+    e.preventDefault();
+    $("#dropdown-menu").toggleClass("active");
+  });
 });

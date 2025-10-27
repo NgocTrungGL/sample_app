@@ -8,6 +8,12 @@
   </head>
 
   <body>
+    <h1><%= t(".title", default: t("mailer.default_title")) %></h1>
+
+    <p><%= t(".greeting", default: t("mailer.default_greeting")) %></p>
+
     <%= yield %>
+
+    <p><%= t(".signature", default: t("mailer.default_signature")) %></p>
   </body>
 </html>
