@@ -97,3 +97,6 @@ en:
       welcome_heading: "Welcome to the Sample App"
       home_description_html: "This is the home page for the %{tutorial_link} sample application."
       sign_up_now: "Sign up now!"
+  account_activations:
+    success: "Account activated!"
+    invalid_link: "Invalid activation link"

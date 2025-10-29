@@ -52,6 +52,8 @@ gem "faker", "2.21.0"
 
 gem "pagy"
 
+gem "figaro"
+
 gem "bcrypt", "3.1.18"
 # Use Sass to process CSS
 # gem "sassc-rails"
