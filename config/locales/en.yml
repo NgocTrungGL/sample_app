@@ -81,6 +81,7 @@ en:
       log_in_heading: "Log in"
       email: "Email"
       password: "Password"
+      forgot password: "Forgot password"
       remember_me: "Remember me on this computer"
       log_in_button: "Log in"
       new_user: "New user?"
