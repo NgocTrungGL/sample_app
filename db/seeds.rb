@@ -5,26 +5,47 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-User.create!(
-  name: "Lulu",
-  email: "lulu@gmail.com",
-  password: "lulu12345",
-  password_confirmation: "lulu12345",
-  admin: true,
-  activated: true,
-  activated_at: Time.zone.now
-)
+# User.create!(
+#   name: "Lulu",
+#   email: "lulu@gmail.com",
+#   password: "lulu12345",
+#   password_confirmation: "lulu12345",
+#   admin: true,
+#   activated: true,
+#   activated_at: Time.zone.now
+# )
 
-35.times do |n|
-  name  = Faker::Name.name
-  email = "example-#{n + 1}@railstutorial.org"
-  password = "password"
-  User.create!(
-    name: name,
-    email: email,
-    password: password,
-    password_confirmation: password,
-    activated: true,
-    activated_at: Time.zone.now
-  )
+# 35.times do |n|
+#   name  = Faker::Name.name
+#   email = "example-#{n + 1}@railstutorial.org"
+#   password = "password"
+#   User.create!(
+#     name: name,
+#     email: email,
+#     password: password,
+#     password_confirmation: password,
+#     activated: true,
+#     activated_at: Time.zone.now
+#   )
+# end
+# users = User.order(:created_at).take(6)
+
+# 30.times do
+#   content = Faker::Lorem.sentence(word_count: 5)
+#   users.each { |user| user.microposts.create!(content: content) }
+# end
+users = User.all
+user = users.first
+
+following = users[2..20]
+followers = users[3..15]
+
+# User follows others
+following.each do |followed|
+  user.follow(followed)
+end
+
+# Others follow the user
+followers.each do |follower|
+  follower.follow(user)
 end
