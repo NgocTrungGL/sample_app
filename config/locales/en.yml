@@ -96,7 +96,7 @@ en:
     home:
       home_title: "Home"
       welcome_heading: "Welcome to the Sample App"
-      home_description_html: "This is the home page for the %{tutorial_link} sample application."
+      home_description_html: "This is the home page for the sample application."
       sign_up_now: "Sign up now!"
   account_activations:
     success: "Account activated!"

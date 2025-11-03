@@ -5,10 +5,15 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
   def show
     @user = User.find_by(id: params[:id])
-    return if @user
+    unless @user
+      flash[:warning] = "User not found!"
+      redirect_to root_path and return
+    end
 
-    flash[:warning] = "Not found user!"
-    redirect_to root_path
+    @page, @microposts = pagy(
+      @user.microposts,
+      items: Settings.page_10
+    )
   end
 
   def index
