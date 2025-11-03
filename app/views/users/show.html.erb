@@ -1,13 +1,52 @@
-<% provide :title, @user.name %>
+<% provide(:title, @user.name) %>
+
 <div class="row">
   <aside class="col-md-4">
+    <!-- Thông tin người dùng -->
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
+        <%= gravatar_for @user, size: 80, class: "rounded-circle border border-2 border-primary" %>
         <%= @user.name %>
       </h1>
       <p><%= t(".email") %>: <%= @user.email %></p>
       <p><%= t(".member_since") %>: <%= l(@user.created_at, format: :long) %></p>
     </section>
+
+    <!-- Thống kê followers / following -->
+    <section class="stats">
+      <%= render "shared/stats" %>
+
+      <% if @users && @users.any? %>
+        <div class="user_avatars mt-3">
+          <% @users.each do |user| %>
+            <%= link_to gravatar_for(user, size: 30, class: "rounded-circle border border-1 border-secondary"), user %>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
   </aside>
+
+  <!-- Bên phải: Nút Follow và bài đăng -->
+  <div class="col-md-8">
+    <!-- Form follow/unfollow -->
+    <%= render "follow_form" if logged_in? && current_user != @user %>
+
+    <!-- Danh sách Micropost -->
+    <% if @microposts.present? %>
+      <h3>
+        Microposts (<%= @microposts.count %>)
+      </h3>
+
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+
+      <!-- Phân trang (Pagy Bootstrap) -->
+      <% if defined?(@pagy) && @pagy.present? && @pagy.pages > 1 %>
+        <%= pagy_bootstrap_nav(@pagy) %>
+      <% end %>
+    <% else %>
+      <p class="text-muted">No microposts yet.</p>
+    <% end %>
+  </div>
 </div>

@@ -1,2 +1,9 @@
 digits:
   digit_6: 6
+digit_140: 140
+page_10: 10
+digit_50: 50
+models:
+  user:
+    avatar_size: 80
+page_10: 10

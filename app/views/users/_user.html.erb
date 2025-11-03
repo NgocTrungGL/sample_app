@@ -1,12 +1,19 @@
-<li>
-  <%= gravatar_for user, size: 50 %>
-  <%= link_to user.name, user %>
-  <% if can_destroy? user %>
-  | <%= link_to "delete", user,
-                data: {
-                  "turbo-method": :delete,
-                  turbo_confirm: "You sure?"
-                } %>
-<% end %>
+<li class="user-item">
+  <div class="user-avatar">
+    <%= gravatar_for user, size: 50 %>
+  </div>
 
+  <div class="user-info">
+    <%= link_to user.name, user, class: "user-name" %>
+
+    <% if can_destroy?(user) %>
+      <span class="separator">|</span>
+      <%= link_to "Delete", user,
+                  data: {
+                    "turbo-method": :delete,
+                    turbo_confirm: "Are you sure?"
+                  },
+                  class: "delete-link" %>
+    <% end %>
+  </div>
 </li>
